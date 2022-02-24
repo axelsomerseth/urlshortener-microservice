@@ -1,5 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 // Connect database
 const mySecret = process.env['MONGO_URI'];
@@ -11,7 +12,6 @@ mongoose.connect(mySecret, connectionOptions)
     .then(() => console.debug('Connection to the Atlas Cluster was succesful!'))
     .catch((err) => console.error(err));
 
-const { Schema } = mongoose;
 const shortUrlSchema = new Schema({
     shortUrl: { type: Number, default: 0 }, // automatic number
     originalUrl: { type: String, required: true },

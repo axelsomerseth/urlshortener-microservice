@@ -55,6 +55,7 @@ app.post('/api/shorturl', (req, res, next) => {
     });
 });
 
+// Redirection endpoint
 const findShortUrlByNumber = require('./repository').findShortUrlByNumber;
 app.get('/api/shorturl/:shorturl', (req, res) => {
     const shortURL = req.params.shorturl;
